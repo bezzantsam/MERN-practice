@@ -11,7 +11,8 @@ const getGoals = (req, res) => {
 //@access Private
 const setGoal = (req, res) => {
     if(!req.body.text){
-        res.status(400).json({message: 'Please provide a goal'})
+        res.status(400)
+        throw new Error('No goal text provided')
     }
     
     
