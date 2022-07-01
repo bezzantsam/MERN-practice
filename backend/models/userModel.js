@@ -1,4 +1,4 @@
-mongoose = require('mongoose');
+  mongoose = require('mongoose');
 
   const userSchema = mongoose.Schema({
     name: {
@@ -16,4 +16,9 @@ mongoose = require('mongoose');
     type: String,
     required :  [true, 'please add a password']
 },
-});
+},
+{
+    timestamps: true
+})
+
+module.exports = mongoose.model('User', userSchema);
